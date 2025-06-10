@@ -4,14 +4,11 @@ const app = express();
 
 app.use(express.json());
 
-// Эндпоинт для обработки подписей
 app.post('/api/submit', async (req, res) => {
     const { nickname, telegram } = req.body;
 
-    // Токен вашего Telegram-бота (вставьте сюда ваш токен)
-    const BOT_TOKEN = '7995519623:AAHY9GRNEk4Zvjnbg-BsoDgq-CiJv2Ck1QU'; // <--- Вставьте токен вашего бота
-    // ID чата, куда отправлять сообщения (ваш Telegram ID)
-    const CHAT_ID = '819188706'; // <--- Вставьте ваш Telegram ID
+    const BOT_TOKEN = '7995519623:AAHY9GRNEk4Zvjnbg-BsoDgq-CiJv2Ck1QU';
+    const CHAT_ID = '819188706'; 
 
     const message = `Новая подпись петиции:\nНикнейм: ${nickname}\nTelegram: ${telegram}\nДата: ${new Date().toLocaleString('ru-RU')}`;
 
